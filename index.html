@@ -35,13 +35,50 @@
                 <form>
                   <div class="form-group">
                     <ul class="list-group" id="filters">
-                      <li class="filter list-group-item">
-                        <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+						<li class="filter list-group-item">
+							<label for="city">City</label>
+							<input class="form-control" id="city" type="text" placeholder="Minneapolis" pattern="[A-Z]">
+						</li>
+						<li class="filter list-group-item">
+							<label for="state">State</label>
+							<input class="form-control" id="state" type="text" placeholder="MN" maxlength="2" pattern="[A-Z]">
+						</li>
+						<li class="filter list-group-item">
+							<label for="country">Country</label>
+							<input class="form-control" id="country" type="text" placeholder="US" maxlength="3" pattern="[A-Z]">
+						</li>
+						<li class="filter list-group-item">
+							<label for="shape">Shape</label>
+							<select class="form-control" id="shape">
+								<option value="select">(select)</option>
+								<option value="triangle">Triangle</option>
+								<option value="light">Light</option>
+								<option value="circle">Circle</option>
+								<option value="formation">Formation</option>
+								<option value="fireball">Fireball</option>
+								<option value="sphere">Sphere</option>
+								<option value="disk">Disk</option>
+								<option value="chevron">Chevron</option>
+								<option value="cross">Cross</option>
+								<option value="flash">Flash</option>
+								<option value="oval">Oval</option>
+								<option value="teardrop">Teardrop</option>
+								<option value="cylinder">Cylinder</option>
+								<option value="changing">Changing</option>
+								<option value="other">Other</option>
+							</select>
+						</li>
+						<li class="filter list-group-item">
+							<label for="fromdate">After date:</label>
+							<input class="form-control" id="fromdatetime" type="date" placeholder="05-07-1957">
+						</li>
+						<li class="filter list-group-item">
+							<label for="todate">Before date:</label>
+							<input class="form-control" id="todatetime" type="date" placeholder="01-11-2022">
                       </li>
                     </ul>
                   </div>
-                  <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                  <button id="filter-btn" type="button" class="btn btn-default" onclick="populateTable()">Filter Table</button>
                 </form>
               </div>
             </div>
@@ -61,7 +98,9 @@
                   <th class="table-head">Comments</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody id="thetable">
+			  
+			  </tbody>
             </table>
           </div>
         </div>
